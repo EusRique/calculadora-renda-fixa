@@ -9,7 +9,6 @@ export function getPoupancaResult(
     getIndexPoupanca(index),
     calculateFullMonthsDays(periods)
   );
-
   return { interestAmount };
 }
 
@@ -19,14 +18,10 @@ export function calculateFullMonthsDays(days: number): number {
 }
 
 export function calculateAnnualSavingsRate(selic: number) {
-  if (selic > 8.5) return 6; // // 0.5% ao mês * 12
+  if (selic > 8.5) return 0.5; // // 0.5% ao mês * 12
   return selic * 0.7;
 }
 
 function getIndexPoupanca(annualRate: number): number {
-  const monthlyRate = annualRate / 12; // transforma 6% ao ano em 0.5% ao mês
-  const dailyRate = monthlyRate / 100; // transforma 0.5% ao mês em 0.005
-  return Math.pow(1 + dailyRate, 1 / 30);
-
-  //return Math.pow(index / 100 + 1, 1 / 30); utilizar essa linha para calcular o index a partir de um valor fixo do store, ex: 0.6
+  return Math.pow(annualRate / 100 + 1, 1 / 30);
 }

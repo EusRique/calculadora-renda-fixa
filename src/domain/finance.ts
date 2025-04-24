@@ -3,6 +3,7 @@ export function compoundInterest(
   index: number,
   days: number
 ): number {
+  //1.00016405
   const interest = amount * Math.pow(index, days) - amount;
   return parseFloat(interest.toFixed(2));
 }
