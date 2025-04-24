@@ -2,6 +2,7 @@
 import AmountInput from '@/components/investment-inputs/amount-input.vue';
 import PeriodInput from '../investment-inputs/period-input.vue';
 import PeriodTypeInput from '../investment-inputs/period-type-input.vue';
+import DiInput from '../investment-inputs/di-input.vue';
 </script>
 <template>
   <div class="bg-white shadow-lg rounded-lg p-3">
@@ -14,24 +15,7 @@ import PeriodTypeInput from '../investment-inputs/period-type-input.vue';
         <PeriodInput />
         <PeriodTypeInput />
       </div>
-
-      <div>
-        <div class="flex gap-2 w-full flex-row items-center">
-          <span class="material-symbols-outlined text-gray-500 pt-6">
-            bar_chart
-          </span>
-
-          <div class="flex flex-col w-full">
-            <label class="text-sm text-gray-600 mb-1">Taxa CDI</label>
-            <input
-              type="number"
-              class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="% ao ano"
-            />
-          </div>
-        </div>
-      </div>
-
+      <DiInput />
       <div>
         <div class="flex gap-2 w-full flex-row items-center">
           <span class="material-symbols-outlined text-gray-500 pt-6">

@@ -1,3 +1,6 @@
+import { loadSelicRate } from '@/application/services/investment-service';
+import { calculateAnnualSavingsRate } from '@/domain/poupança';
+import { fecthSelic } from '@/infrastructure/api/selic-api';
 import { defineStore } from 'pinia';
 
 export enum PeriodTypes {
@@ -12,6 +15,7 @@ export const useInvestmentStore = defineStore('investiment', {
       amount: 1000,
       period: 360,
       poupanca: 0,
+      di: 0,
       periodType: PeriodTypes.Days,
     };
   },
@@ -28,12 +32,22 @@ export const useInvestmentStore = defineStore('investiment', {
       this.periodType = periodType;
     },
 
-    initializeStore() {
-      this.loadIndexes();
+    setDi(di: number) {
+      this.di = di;
     },
 
-    loadIndexes() {
-      this.poupanca = 0.5;
+    initializeStore() {
+      this.fetchSelic();
+    },
+
+    async fetchSelic() {
+      try {
+        const selic = await loadSelicRate();
+        this.di = selic;
+        this.poupanca = calculateAnnualSavingsRate(selic);
+      } catch (err) {
+        console.error('Erro ao carregar Selic:', err);
+      }
     },
   },
 });
