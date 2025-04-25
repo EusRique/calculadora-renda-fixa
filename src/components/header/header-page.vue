@@ -7,7 +7,7 @@
       class="w-20 h-20 pl-0.5"
     />
     <h1 class="text-xl font-normal flex justify-center items-center w-full">
-      Calculadora Renda Fixa
+      Calculadora de investimentos
     </h1>
   </div>
 </template>

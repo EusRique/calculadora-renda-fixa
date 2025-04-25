@@ -25,7 +25,7 @@ watch(cdb, () => {
       </span>
 
       <div class="flex flex-col w-full">
-        <label class="text-sm text-gray-600 mb-1">CDB/RDB/LC</label>
+        <label class="text-sm text-gray-600 mb-1">Rentabilidade CDB</label>
         <input
           id="cdb"
           v-model="cdb"

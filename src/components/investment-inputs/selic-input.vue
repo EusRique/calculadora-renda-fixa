@@ -24,7 +24,10 @@ watch(selic, () => {
     </span>
 
     <div class="flex flex-col w-full">
-      <label class="text-sm text-gray-600 mb-1">Taxa SELIC</label>
+      <label class="text-sm text-gray-600 mb-1">
+        Taxa SELIC
+        <span class="text-xs">(a.a)</span>
+      </label>
       <input
         id="selic"
         v-model="selic"

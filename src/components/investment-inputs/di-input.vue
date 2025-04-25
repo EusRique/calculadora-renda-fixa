@@ -24,7 +24,10 @@ watch(di, () => {
     </span>
 
     <div class="flex flex-col w-full">
-      <label class="text-sm text-gray-600 mb-1">Taxa CDI</label>
+      <label class="text-sm text-gray-600 mb-1">
+        Taxa CDI
+        <span class="text-xs">(a.a)</span>
+      </label>
       <input
         id="di"
         v-model="di"

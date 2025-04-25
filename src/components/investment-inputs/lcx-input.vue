@@ -25,7 +25,7 @@ watch(lcx, () => {
       </span>
 
       <div class="flex flex-col w-full">
-        <label class="text-sm text-gray-600 mb-1">LCI/LCA</label>
+        <label class="text-sm text-gray-600 mb-1">Rentabilidade LCI/LCA</label>
         <input
           id="lcx"
           v-model="lcx"
