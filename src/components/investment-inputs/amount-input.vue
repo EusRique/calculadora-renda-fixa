@@ -40,27 +40,6 @@ watch(amount, () => {
       </transition>
     </div>
   </div>
-
-  <transition name="fade">
-    <div
-      v-if="true"
-      class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white shadow-md border border-gray-200 rounded-lg w-full max-w-md"
-    >
-      <div class="h-1 bg-indigo-900 rounded-t-md" />
-      <div class="flex items-start gap-3 p-4">
-        <span class="text-indigo-800 text-xl">
-          <span class="material-icons">info</span>
-        </span>
-        <p class="text-sm text-gray-800">
-          Por favor, selecione um item no campo 'De' ou digite um documento
-          válido.
-        </p>
-        <button class="ml-auto text-gray-500 hover:text-gray-700">
-          <span class="material-icons text-sm">close</span>
-        </button>
-      </div>
-    </div>
-  </transition>
 </template>
 
 <style lang="scss">
