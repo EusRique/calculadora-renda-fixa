@@ -4,6 +4,8 @@ import PeriodInput from '../investment-inputs/period-input.vue';
 import PeriodTypeInput from '../investment-inputs/period-type-input.vue';
 import DiInput from '../investment-inputs/di-input.vue';
 import SelicInput from '../investment-inputs/selic-input.vue';
+import CdbInput from '../investment-inputs/cdb-input.vue';
+import LcxInput from '../investment-inputs/lcx-input.vue';
 </script>
 <template>
   <div class="bg-white shadow-lg rounded-lg p-3">
@@ -18,48 +20,8 @@ import SelicInput from '../investment-inputs/selic-input.vue';
       </div>
       <DiInput />
       <SelicInput />
-      <div>
-        <div>
-          <div class="flex gap-2 w-full flex-row items-center">
-            <span class="material-symbols-outlined text-gray-500 pt-6">
-              trending_up
-            </span>
-
-            <div class="flex flex-col w-full">
-              <label class="text-sm text-gray-600 mb-1">CDB/RDB/LC</label>
-              <input
-                type="number"
-                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="% CDI"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="flex gap-2 w-full flex-row items-center">
-          <span class="material-symbols-outlined text-gray-500 pt-6">
-            trending_up
-          </span>
-
-          <div class="flex flex-col w-full">
-            <label class="text-sm text-gray-600 mb-1">LCI/LCA</label>
-            <input
-              type="number"
-              class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="% CDI"
-            />
-          </div>
-        </div>
-      </div>
-
-      <button
-        type="button"
-        class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-xl font-semibold transition"
-      >
-        Calcular
-      </button>
+      <CdbInput />
+      <LcxInput />
     </form>
   </div>
 </template>

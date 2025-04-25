@@ -14,6 +14,8 @@ export const useInvestmentStore = defineStore('investiment', {
     return {
       amount: 1000,
       period: 360,
+      cdb: 100,
+      lcx: 100,
       poupanca: 0,
       selic: 0,
       di: 0,
@@ -39,6 +41,14 @@ export const useInvestmentStore = defineStore('investiment', {
 
     setSelic(selic: number) {
       this.selic = selic;
+    },
+
+    setCdb(cdb: number) {
+      this.cdb = cdb;
+    },
+
+    setLcx(lcx: number) {
+      this.lcx = lcx;
     },
 
     initializeStore() {
