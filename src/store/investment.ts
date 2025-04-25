@@ -15,6 +15,7 @@ export const useInvestmentStore = defineStore('investiment', {
       amount: 1000,
       period: 360,
       poupanca: 0,
+      selic: 0,
       di: 0,
       periodType: PeriodTypes.Days,
     };
@@ -36,6 +37,10 @@ export const useInvestmentStore = defineStore('investiment', {
       this.di = di;
     },
 
+    setSelic(selic: number) {
+      this.selic = selic;
+    },
+
     initializeStore() {
       this.fetchSelic();
     },
@@ -43,6 +48,7 @@ export const useInvestmentStore = defineStore('investiment', {
     async fetchSelic() {
       try {
         const selic = await loadSelicRate();
+        this.selic = selic;
         this.di = selic;
         this.poupanca = calculateAnnualSavingsRate(selic);
       } catch (err) {
