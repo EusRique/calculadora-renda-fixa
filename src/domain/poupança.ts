@@ -4,7 +4,7 @@ export function getPoupancaResult(
   index: number,
   periods: number
 ): { interestAmount: number } {
-  const interestAmount = finance.compoundInterest(
+  const interestAmount = finance.compoundInterestPoupanca(
     amount,
     getIndexPoupanca(index),
     calculateFullMonthsDays(periods)

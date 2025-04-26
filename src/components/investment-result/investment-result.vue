@@ -28,6 +28,9 @@ const iofAmountDisplay = computed(() => filters.currency(props.iofAmount || 0));
 const taxAmountDisplay = computed(() => filters.currency(props.taxAmount || 0));
 const liquidAmountDisplay = computed(() => filters.currency(totalProfit.value));
 const totalAmountDisplay = computed(() => filters.currency(totalAmount.value));
+const totalProfitPercentageDisplay = computed(() =>
+  filters.percent(totalProfitPercentage.value)
+);
 const taxPercentageDisplay = computed(() =>
   filters.percent(props.taxPercentage || 0)
 );
@@ -86,7 +89,7 @@ const filters = {
 
       <div class="absolute inset-0 flex items-center justify-center z-10">
         <span class="text-sm font-medium text-gray-700">
-          {{ totalProfitPercentage }}%
+          {{ totalProfitPercentageDisplay }}
         </span>
       </div>
     </div>

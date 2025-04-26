@@ -1,4 +1,4 @@
-export function compoundInterest(
+export function compoundInterestPoupanca(
   amount: number,
   index: number,
   days: number
@@ -7,7 +7,7 @@ export function compoundInterest(
   return parseFloat(interest.toFixed(2));
 }
 
-export function compoundInterestCDB(
+export function compoundInterest(
   amount: number,
   index: number,
   days: number

@@ -11,7 +11,7 @@ export function getCDBResult(
   taxPercentage: number;
   iofAmount: number;
 } {
-  const interestAmount = finance.compoundInterestCDB(
+  const interestAmount = finance.compoundInterest(
     amount,
     getIndexCDB(yearlyIndex, di),
     days
