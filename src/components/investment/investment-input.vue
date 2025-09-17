@@ -3,7 +3,7 @@ import AmountInput from '@/components/investment-inputs/amount-input.vue';
 import PeriodInput from '../investment-inputs/period-input.vue';
 import PeriodTypeInput from '../investment-inputs/period-type-input.vue';
 import DiInput from '../investment-inputs/di-input.vue';
-import SelicInput from '../investment-inputs/selic-input.vue';
+//import SelicInput from '../investment-inputs/selic-input.vue';
 import CdbInput from '../investment-inputs/cdb-input.vue';
 import LcxInput from '../investment-inputs/lcx-input.vue';
 </script>
@@ -19,7 +19,7 @@ import LcxInput from '../investment-inputs/lcx-input.vue';
         <PeriodTypeInput />
       </div>
       <DiInput />
-      <SelicInput />
+      <!-- <SelicInput /> -->
       <CdbInput />
       <LcxInput />
     </form>

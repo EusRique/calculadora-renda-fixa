@@ -1,6 +1,5 @@
 import { loadSelicRate } from '@/application/services/investment-service';
 import { calculateAnnualSavingsRate } from '@/domain/poupança';
-import { fecthSelic } from '@/infrastructure/api/selic-api';
 import { defineStore } from 'pinia';
 
 export enum PeriodTypes {

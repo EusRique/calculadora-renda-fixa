@@ -4,6 +4,12 @@ import { computed, ref, watch } from 'vue';
 
 const store = useInvestmentStore();
 const error = ref<string>('');
+const selectedOption = ref({ text: 'Pós fixado', value: 'pos' });
+const options = ref([
+  { text: 'Prefixado', value: 'pre' },
+  { text: 'Pós-fixado', value: 'pos' },
+  { text: 'IPCA+', value: 'ipca' },
+]);
 
 const di = computed({
   get: () => store.di,
@@ -19,14 +25,39 @@ watch(di, () => {
 
 <template>
   <div class="flex gap-2 w-full flex-row items-center">
+    <span class="material-symbols-outlined text-gray-500 pt-10">
+      view_kanban
+    </span>
+    <div class="flex flex-col w-full">
+      <label class="text-sm text-gray-600 mb-1"> Tipo de Rentabilidade </label>
+      <span v-if="selectedOption.value === 'pos'" class="text-xs text-gray-600">
+        Rendem de acordo com uma porcentagem do CDI. Estamos considerando o CDI
+        como 14.9%.
+      </span>
+      <span v-if="selectedOption.value === 'pre'" class="text-xs text-gray-600">
+        Rendem conforme uma taxa fixa combinada no momento da compra.
+      </span>
+      <select
+        v-model="selectedOption.value"
+        class="w-full px-4 py-2 h-10 border border-gray-300 rounded-xl focus:outline-none"
+      >
+        <option v-for="item in options" :key="item.text" :value="item.value">
+          {{ item.text }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="flex gap-2 w-full flex-row items-center">
     <span class="material-symbols-outlined text-gray-500 pt-6">
       bar_chart
     </span>
-
     <div class="flex flex-col w-full">
       <label class="text-sm text-gray-600 mb-1">
-        Taxa CDI
-        <span class="text-xs">(a.a)</span>
+        Taxa
+        <span v-if="selectedOption.value === 'pos'" class="text-xs">
+          % do CDI
+        </span>
+        <span v-if="selectedOption.value === 'pre'" class="text-xs">% a.a</span>
       </label>
       <input
         id="di"
