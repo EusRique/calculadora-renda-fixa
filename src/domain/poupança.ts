@@ -21,7 +21,7 @@ export function calculateFullMonthsDays(days: number): number {
 // Função para calcular a taxa anual de poupança com base na taxa SELIC
 export function calculateAnnualSavingsRate(selic: number) {
   // Quando a SELIC é maior que 8.5% ao ano, a poupança rende 0.5% ao mês (6.17% ao ano)
-  if (selic > 8.5) return 6.17;
+  if (selic > 8.5) return 8.4;
   // Quando a SELIC é menor ou igual a 8.5% ao ano, a poupança rende 70% da SELIC ao ano
   return selic * 0.7;
 }
